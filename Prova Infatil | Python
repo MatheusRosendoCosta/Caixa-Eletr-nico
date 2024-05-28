@@ -1,0 +1,30 @@
+import random
+
+
+def generate_question():
+    a = random.randint(1, 100)
+    b = random.randint(1, 100)
+    return a, b
+
+
+def main():
+    correct_answers = 0
+
+
+    print('              PROVA DE SOMA - 5 Questões ')
+
+    for _ in range(5):
+        a, b = generate_question()
+        answer = int(input(f'Qual é a soma de: {a}+{b}?\n'))
+
+        if answer == a + b:
+            print('Correto!👍')
+            correct_answers += 1
+        else:
+            print(f'Incorreto! A resposta certa era: {a+b}.')
+
+    print('\nFim da prova!')
+    print(f'Você acertou o total de {correct_answers} perguntas de 5.')
+
+if __name__ == "__main__":
+    main()
